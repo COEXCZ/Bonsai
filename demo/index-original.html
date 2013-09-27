@@ -26,7 +26,7 @@
         <div id="wrapper">
         	<div id="chart"></div>
         	<div class="bonsai">
-        		<!--
+        		
                 <ul class="section">
 	    			
 	    			<li class="folder">
@@ -71,7 +71,7 @@
 						</ul>
 	    			</li>
         		</ul>
-        		-->
+        		
         	</div>
         </div>
 
@@ -93,58 +93,6 @@
 $(document).ready(function(){
 
 
-    //Callback Function
-    function renderTree(json) {
-    		if(json !== undefined ) $('.bonsai').json2html(json, transforms.parent);
-    }
-
-
-	//Transforms
-    var transforms = {
-		'parent': [
-	        
-				{"tag":"ul","class":"section", "children":function() {return(json2html.transform(this.groups,transforms.node));}}
-
-        ],
-		'node': [
-	       
-				{"tag":"li","class":"${class}","children":[
-					{"tag":"a","class":"","html":"${label}","href": ""},
-					{"tag":"ul","class":"section", "children":function() {return(json2html.transform(this.groups,transforms.node));}}
-				]}
-		]
-    };
-
-    // Data
-    var data = [
-        {
-            "groups" : [ 
-                { 
-                    'label' : '<i class="icon-caret-right"></i><i class="icon-doctype icon-columns"></i>Templates<i class="icon-chevron-sign-right"></i>', 
-                    'class': 'folder', 
-                    "groups" : [ 
-                        { 
-                            'label' : '<i class="icon-caret-right"></i><i class="icon-folder icon-doctype icon-folder-close"></i>Navigation<i class="icon-chevron-sign-right"></i>',
-                            'class': 'folder',
-                            "groups" : [
-                                {
-                                    'label': '<i class="icon-filetype icon-doctype icon-columns"></i>header<i class="icon-chevron-sign-right"></i>'
-                                }
-                            ]
-                        }  
-                    ] 
-                }   
-            ]
-        }
-    ];
-
-
-    // make tree from JSON data
-    //renderTree(data);
-
-    //var tree = new $.fn.json2html (data, transforms.parent);
-    $('.bonsai').json2html (data, transforms.parent);
-
     // create a new bonsai
     var mytree = new $.bonsai($('.bonsai'));
 
@@ -158,26 +106,7 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
 
 
 

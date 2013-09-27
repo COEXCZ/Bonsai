@@ -391,7 +391,6 @@ var json2html = {
 
 	//Main method
 	$.fn.json2html = function(json, transform, _options){	
-		
 		//Make sure we have the json2html base loaded
 		if(typeof json2html === 'undefined') return(undefined);
 
@@ -613,7 +612,7 @@ $(document).ready(function(){
 
 
     // create a new bonsai
-    var mytree = new $.bonsai($('.bonsai'));
+    //var mytree = new $.bonsai($('.bonsai'));
 
     // call a public method
     //myplugin.foo_public_method();
